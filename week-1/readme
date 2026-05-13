@@ -7,7 +7,34 @@ Using Sieve + SPF (Smallest Prime Factor):
 
 The sieve precomputes and stores the smallest prime factor (SPF) for every number up to n.
 Then, to factorize any number, we repeatedly look up spf[n] and divide n by it, collecting the prime factors efficiently.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+evn or odd - problem statement
+Input: n = 15
+Output: false
+Explanation: 15 % 2 = 1, so 15 is odd .
 
+Input: n = 44
+Output: true
+Explanation: 44 % 2 = 0, so 44 is even.
+
+[Naive Approach] By Finding the Remainder - O(1) Time and O(1) Space
+We can check the remainder when divided by 2. If the remainder is 0, the number is even, otherwise it is odd. For example, when we divide 13 by 2, we get remainder as 1 and when we divide 14 by 2, we get remainder as 0.
+
+[Efficient Approach] Using Bitwise AND Operator - O(1) Time and O(1) Space
+The last bit of all odd numbers is always 1, while for even numbers it’s 0. So, when performing bitwise AND operation with 1, odd numbers give 1, and even numbers give 0.
+Note: Bitwise operators are extremely fast and efficient because they operate directly at the binary level, making them significantly faster than arithmetic or logical operations.
+
+Examples:
+
+15  ->               1 1 1 1
+                    &  0 0 0 1
+                       -------
+                       0 0 0 1 , so this we can say it is an odd number.
+
+44 ->        1 0 1 1 0 0
+            &  0 0 0 0 0 1
+                 ----------
+                0 0 0 0 0 0 , so this we can say it is an even number.
 
  
 ​
