@@ -1,0 +1,13 @@
+Optimised Trial Division:
+
+Try dividing n by all numbers up to √n, starting from 2.
+After removing all factors of 2, check only odd numbers.
+If n is still greater than 1, it's a prime factor itself.
+Using Sieve + SPF (Smallest Prime Factor):
+
+The sieve precomputes and stores the smallest prime factor (SPF) for every number up to n.
+Then, to factorize any number, we repeatedly look up spf[n] and divide n by it, collecting the prime factors efficiently.
+
+
+ 
+​
